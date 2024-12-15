@@ -1,0 +1,290 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Wizkid FC Investment</title>  
+  <style>
+    body {  
+  font-family: 'Arial', sans-serif;  
+  margin: 0;  
+  padding: 0;  
+  background: linear-gradient(120deg, #0d1b2a, #0d1b2a);  
+  color: white;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  height: 100vh;  
+  
+}  
+
+.container {  
+  width: 90%;  
+  max-width: 600px;  
+  text-align: center;  
+  padding: 20px;  
+  background: rgba(255, 255, 255, 0.15);  
+  border: 2px solid rgba(255, 255, 255, 0.5);  
+  border-radius: 15px;  
+  backdrop-filter: blur(10px);  
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);  
+  animation: fadeIn 1s ease-in-out;  
+}  
+
+@keyframes fadeIn {  
+  from { opacity: 0; transform: scale(0.9); }  
+  to { opacity: 1; transform: scale(1); }  
+}  
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+header {  
+  margin-bottom: 20px;  
+  
+}  
+
+header h1 {  
+  font-size: 1.8rem;  
+  margin: 10px 0;  
+  color: #ffdd00;  
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);  
+}  
+
+header p {  
+  font-size: 1rem;  
+  color: #f0f0f0;  
+  margin: 5px 0;  
+}  
+
+.card {  
+  background: linear-gradient(45deg, #ff7f50, #ff6347);
+  color: white;  
+  padding: 20px;  
+  border-radius: 10px;  
+  margin-bottom: 20px;  
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  
+}  
+
+.card:hover {  
+  transform: translateY(-5px);  
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);  
+}  
+
+.card h2 {  
+  margin-bottom: 15px;  
+  color: #2c2c2c;  
+}  
+
+.card p {  
+  margin: 5px 0;  
+  font-size: 1rem;  
+}  
+
+.account-number {  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  margin-top: 10px;  
+}  
+
+.clipboard {  
+  width: 25px;  
+  height: 25px;  
+  margin-left: 10px;  
+  cursor: pointer;  
+  transition: transform 0.3s ease;  
+}  
+
+.clipboard:hover {  
+  transform: scale(1.2);  
+}  
+
+.instructions {  
+  background: rgba(255, 255, 255, 0.9);  
+  color: #2c2c2c;  
+  border-radius: 5px;  
+  padding: 10px;  
+  margin-top: 15px;  
+  text-align: left;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+}  
+
+.instructions h3 {  
+  color: #ffa700;  
+  margin-bottom: 10px;  
+}  
+
+.instructions ul {  
+  list-style: none;  
+  padding: 0;  
+}  
+
+.instructions li {  
+  margin-bottom: 8px;  
+  font-size: 0.9rem;  
+}  
+
+.upload-section {  
+  margin-top: 20px;  
+}  
+
+.upload-input {  
+  margin-bottom: 15px;  
+  width: 90%;  
+  padding: 15px;  
+  border: none;  
+  border-radius: 10px;  
+  font-size: 1rem;  
+  background: rgba(255, 255, 255, 0.8);  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
+}  
+
+.upload-input:focus {  
+  outline: none;  
+  border: 2px solid #ffa700;  
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.5);  
+}  
+
+.confirm-button {  
+  background: #ff4500;  
+  color: white;  
+  border: none;  
+  padding: 15px 25px;  
+  border-radius: 50px;  
+  font-size: 1rem;  
+  cursor: pointer;  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
+  transition: 0.3s ease;  
+}  
+
+.confirm-button:hover {  
+  background: #d84315;  
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);  
+  transform: scale(1.05);  
+}  
+
+.countdown {  
+  margin-top: 20px;  
+  text-align: center;  
+}  
+
+.circle {  
+  width: 100px;  
+  height: 100px;  
+  border: 8px solid #ffdd00;  
+  border-radius: 50%;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  margin: 0 auto;  
+  animation: pulse 1s infinite;  
+}  
+
+@keyframes pulse {  
+  0%, 100% { transform: scale(1); }  
+  50% { transform: scale(1.1); }  
+}  
+
+.waiting-text {  
+  margin-top: 10px;  
+  font-size: 1rem;  
+  color: #ffa700;  
+}  
+
+.notification {  
+  background: rgba(255, 0, 0, 0.8);  
+  color: white;  
+  padding: 10px 15px;  
+  border-radius: 5px;  
+  margin-top: 20px;  
+  animation: slideIn 0.5s ease;  
+}  
+
+@keyframes slideIn {  
+  from { transform: translateY(50px); opacity: 0; }  
+  to { transform: translateY(0); opacity: 1; }  
+}
+  </style> 
+</head>  
+<body>  
+  <div class="container">  
+    <!-- Header Section -->  
+    <header>  
+      <img src="https://cdn-icons-png.flaticon.com/128/18478/18478050.png" alt="Wizkid FC Logo" class="logo">  
+      <h1>Wizkid FC Investment</h1>  
+      <p>Purchase your coupon code to join the movement!</p>  
+    </header>  
+
+    <!-- Payment Details Section -->  
+    <div class="card">  
+      <h2>Payment Details</h2>  
+      <p><strong>Amount:</strong> ₦1,500</p>  
+      <p><strong>Bank:</strong> 9 Payment Service Bank (9PSB)</p>  
+      <p><strong>Account Name:</strong> Favour Adesiyan</p>  
+      <p class="account-number">  
+        <strong>Account Number:</strong> 6174988805  
+        <img src="https://cdn-icons-png.freepik.com/256/17542/17542640.png?ga=GA1.1.139198705.1725613241&semt=ais_hybrid" alt="Copy to Clipboard" class="clipboard" onclick="copyToClipboard()">  
+      </p>  
+      <div class="instructions">  
+        <h3>Deposit Instructions</h3>  
+        <ul>  
+          <li>Transfer ₦1,500 to the account details above.</li>  
+          <li>Upload a screenshot of the payment receipt below.</li>  
+          <li>Click the confirm button to proceed.</li>  
+        </ul>  
+      </div>  
+    </div>  
+
+    <!-- Upload and Confirm Section -->  
+    <div class="upload-section">  
+      <input type="file" id="screenshot" class="upload-input" accept="image/*">  
+      <button onclick="confirmDeposit()" class="confirm-button">Confirm Deposit</button>  
+    </div>  
+
+    <!-- Countdown Timer Section -->  
+    <div class="countdown" id="countdown" style="display: none;">  
+      <div class="circle">  
+        <p id="timer">30</p>  
+      </div>  
+      <p class="waiting-text">Please wait while your deposit for the coupon code is under review...</p>  
+    </div>  
+
+    <!-- Notification Section -->  
+    <div class="notification" id="notification" style="display: none;">  
+      <p>Deposit failed. Please try again.</p>  
+    </div>  
+  </div>  
+
+  <script>
+    function copyToClipboard() {  
+  navigator.clipboard.writeText('6174988805');  
+  alert('Account number copied to clipboard!');  
+}  
+
+function confirmDeposit() {  
+  const fileInput = document.getElementById('screenshot');  
+  if (!fileInput.files.length) {  
+    alert('Please upload a screenshot of your payment.');  
+    return;  
+  }  
+
+  document.getElementById('countdown').style.display = 'block';  
+  let countdown = 30;  
+  const timerElement = document.getElementById('timer');  
+  const interval = setInterval(() => {  
+    countdown--;  
+    timerElement.textContent = countdown;  
+    if (countdown === 0) {  
+      clearInterval(interval);  
+      document.getElementById('countdown').style.display = 'none';  
+      document.getElementById('notification').style.display = 'block';  
+    }  
+  }, 1000);  
+}
+  </script>  
+</body>  
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup - Wizkid FC Investment</title>
+  <style>
+    /* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(45deg, #ff7f50, #ff6347);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-container {
+  width: 90%;
+  max-width: 400px;
+  background-color: #linear-gradient(45deg, #ff7f50, #ff6347);
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+
+/* Logo section */
+.logo-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, #0d1b2a, #0d1b2a);
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  linear-gradient(45deg, #ff7f50, #ff6347);
+}
+
+.logo-section h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logo-section p {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  opacity: 0.8;
+}
+
+/* Form styles */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 90%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #2e2e3e;
+  color: white;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+input:focus {
+  border-color: #ff9800;
+  background-color: #3e3e50;
+}
+
+/* Button styles */
+button {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff9800, #f44336);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #f44336, #ff9800);
+  box-shadow: 0px 4px 10px rgba(255, 87, 34, 0.5);
+}
+
+
+
+/* Dialog Styles */
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.dialog-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 300px;
+}
+
+.dialog-image {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.dialog p {
+  margin: 15px 0;
+  color: black;
+}
+
+.dialog-buttons button {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #2196f3;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dialog-buttons button:hover {
+  background: #1976d2;
+}
+
+.dialog-close {
+  margin-top: 15px;
+  background: #e53935;
+}
+
+.dialog-close:hover {
+  background: #d32f2f;
+}
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <div class="logo-section">
+      <div class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/128/18478/18478050.png" alt="biggest bird" class="logo">
+      </div>
+      <h2>Wizkid FC Investment</h2>
+      <p>Invest in your dreams and join a community of forward thinkers!</p>
+    </div>
+
+    <form id="signupForm" class="signup-form">
+      <div class="form-group">
+        <input type="text" id="username" placeholder="Username" required>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="referral" placeholder="Referral Number (Optional)" >
+      </div>
+
+      <div class="form-group">
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="coupon" placeholder="Coupon Code">
+      </div>
+
+      <button type="submit" id="submitButton">Sign Up</button>
+    </form>
+  </div>
+
+
+
+  <!-- Dialog Notification -->
+  <div id="dialog" class="dialog hidden">
+    <div class="dialog-content">
+      <img src="https://cdn-icons-png.freepik.com/256/15532/15532903.png?ga=GA1.1.139198705.1725613241&semt=ais_hybrid" alt="Wrong Coupon" class="dialog-image">
+      <p>Invalid coupon code! Please enter a valid code.</p>
+      <div class="dialog-buttons">
+        <button onclick="location.href='coupon.html';">Purchase Coupon</button>
+        <button onclick="location.href='https://wa.me/+2349159397408';">Chat with Support</button>
+      </div>
+      <button class="dialog-close" onclick="closeDialog()">Close</button>
+    </div>
+  </div>
+
+  <script>
+  document.getElementById('signupForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const couponCode = document.getElementById('coupon').value.trim();
+  const validCoupon = "WIZKIDBIGBIRD2024"; // Replace with your actual valid coupon
+
+  if (couponCode !== validCoupon) {
+    showDialog();
+  } else {
+    alert('Signup successful! Welcome to Wizkid FC Investment.');
+  }
+});
+
+function showDialog() {
+  const dialog = document.getElementById('dialog');
+  dialog.classList.remove('hidden');
+}
+
+function closeDialog() {
+  const dialog = document.getElementById('dialog');
+  dialog.classList.add('hidden');
+}
+</script>
+</body>
+</html>
