@@ -168,6 +168,27 @@ button:hover {
 .dialog-close:hover {
   background: #d32f2f;
 }
+
+
+.coupon-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .coupon-group button {
+      width: auto;
+      padding: 10px 15px;
+      background: linear-gradient(90deg, #ff9800, #f44336);
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+
+    .coupon-group button:hover {
+      background: #0d47a1;
+    }
+    
+    
   </style>
 </head>
 <body>
@@ -196,16 +217,18 @@ button:hover {
       <div class="form-group">
         <input type="password" id="password" placeholder="Password" required>
       </div>
-
-      <div class="form-group">
+      
+      
+ <div class="form-group coupon-group">
         <input type="text" id="coupon" placeholder="Coupon Code">
+        <button type="button" onclick="window.location.href='coupon.html'">Buy Coupon</button>
       </div>
+
 
       <button type="submit" id="submitButton">Sign Up</button>
     </form>
   </div>
 
-  <script type='text/javascript' src='//slushhelmetmirth.com/39/2a/0d/392a0d28346a0e19cd71e87eccfdecf0.js'></script>
 
 
   <!-- Dialog Notification -->
@@ -245,5 +268,10 @@ function closeDialog() {
   dialog.classList.add('hidden');
 }
 </script>
+
+
+<script type='text/javascript' src='//slushhelmetmirth.com/5f/8a/71/5f8a710eaae708ddedca22a14f227181.js'></script>
+
+
 </body>
-</html>
+        </html>
